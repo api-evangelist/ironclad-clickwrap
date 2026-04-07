@@ -8,10 +8,10 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Legal
-  - Contracts
-  - Compliance
   - Agreements
+  - Compliance
+  - Contracts
+  - Legal
 created: '2025-02-17'
 modified: '2026-03-16'
 url: >-
