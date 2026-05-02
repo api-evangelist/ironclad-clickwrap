@@ -13,7 +13,7 @@ tags:
   - Contracts
   - Legal
 created: '2025-02-17'
-modified: '2026-03-16'
+modified: '2026-04-28'
 url: >-
   https://raw.githubusercontent.com/api-evangelist/ironclad-clickwrap/refs/heads/main/apis.yml
 specificationVersion: '0.19'
@@ -25,6 +25,7 @@ apis:
       for implementing clickwrap agreements, managing contract acceptance, and
       building compliant legal workflows.
     humanURL: https://clickwrap-developer.ironcladapp.com/
+    baseURL: https://pactsafe.io
     tags:
       - Clickwrap
       - Contracts
@@ -32,6 +33,9 @@ apis:
     properties:
       - type: Documentation
         url: https://clickwrap-developer.ironcladapp.com/
+      - type: OpenAPI
+        url: >-
+          https://raw.githubusercontent.com/api-evangelist/ironclad-clickwrap/refs/heads/main/openapi/ironclad-clickwrap-openapi.yml
 common:
   - type: Portal
     url: https://clickwrap-developer.ironcladapp.com/

@@ -1,0 +1,354 @@
+openapi: 3.0.3
+info:
+  title: Ironclad Clickwrap API
+  description: >-
+    The Ironclad Clickwrap API (formerly PactSafe) lets developers programmatically
+    manage clickwrap and click-through agreements, track user acceptance, and
+    generate audit-ready records of consent for terms, privacy policies, and
+    other legal contracts.
+  version: '1.1'
+  contact:
+    name: Ironclad Clickwrap Support
+    url: https://ironcladapp.com/support/
+  license:
+    name: Proprietary
+    url: https://ironcladapp.com/
+servers:
+  - url: https://pactsafe.io
+    description: Ironclad Clickwrap API production base URL
+security:
+  - bearerAuth: []
+tags:
+  - name: Sites
+    description: Manage sites that host clickwrap groups.
+  - name: Groups
+    description: Manage clickwrap groups (containers of contracts).
+  - name: Contracts
+    description: Manage individual contract documents.
+  - name: Signers
+    description: Manage end users who accept agreements.
+  - name: Activity
+    description: Send acceptance, rejection, and view events.
+paths:
+  /sites:
+    get:
+      tags: [Sites]
+      summary: List sites
+      operationId: listSites
+      responses:
+        '200':
+          description: List of sites.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Site'
+  /sites/{siteId}:
+    get:
+      tags: [Sites]
+      summary: Get a site
+      operationId: getSite
+      parameters:
+        - $ref: '#/components/parameters/SiteId'
+      responses:
+        '200':
+          description: A site.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Site'
+  /groups:
+    get:
+      tags: [Groups]
+      summary: List clickwrap groups
+      operationId: listGroups
+      parameters:
+        - name: sid
+          in: query
+          schema:
+            type: integer
+          description: Site ID filter.
+      responses:
+        '200':
+          description: List of groups.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Group'
+  /groups/{groupId}:
+    get:
+      tags: [Groups]
+      summary: Get a clickwrap group
+      operationId: getGroup
+      parameters:
+        - $ref: '#/components/parameters/GroupId'
+      responses:
+        '200':
+          description: A group.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+  /contracts:
+    get:
+      tags: [Contracts]
+      summary: List contracts
+      operationId: listContracts
+      responses:
+        '200':
+          description: List of contracts.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contract'
+  /contracts/{contractId}:
+    get:
+      tags: [Contracts]
+      summary: Get a contract
+      operationId: getContract
+      parameters:
+        - $ref: '#/components/parameters/ContractId'
+      responses:
+        '200':
+          description: A contract.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contract'
+  /signers:
+    get:
+      tags: [Signers]
+      summary: List signers
+      operationId: listSigners
+      responses:
+        '200':
+          description: List of signers.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Signer'
+  /signers/{signerId}:
+    get:
+      tags: [Signers]
+      summary: Get a signer
+      operationId: getSigner
+      parameters:
+        - name: signerId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A signer.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Signer'
+  /send/agreed:
+    post:
+      tags: [Activity]
+      summary: Record an agreement acceptance event
+      operationId: sendAgreed
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AgreedEvent'
+      responses:
+        '200':
+          description: Event recorded.
+  /send/displayed:
+    post:
+      tags: [Activity]
+      summary: Record a contract display event
+      operationId: sendDisplayed
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DisplayedEvent'
+      responses:
+        '200':
+          description: Event recorded.
+  /send/visited:
+    post:
+      tags: [Activity]
+      summary: Record a page visit event
+      operationId: sendVisited
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VisitedEvent'
+      responses:
+        '200':
+          description: Event recorded.
+  /retrieve/latest:
+    get:
+      tags: [Activity]
+      summary: Retrieve the latest acceptance state for a signer
+      operationId: retrieveLatest
+      parameters:
+        - name: sig
+          in: query
+          required: true
+          schema:
+            type: string
+          description: Signer identifier.
+        - name: gkey
+          in: query
+          schema:
+            type: string
+          description: Group key.
+      responses:
+        '200':
+          description: Acceptance state.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcceptanceState'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API Key
+  parameters:
+    SiteId:
+      name: siteId
+      in: path
+      required: true
+      schema:
+        type: integer
+    GroupId:
+      name: groupId
+      in: path
+      required: true
+      schema:
+        type: integer
+    ContractId:
+      name: contractId
+      in: path
+      required: true
+      schema:
+        type: integer
+  schemas:
+    Site:
+      type: object
+      properties:
+        id:
+          type: integer
+        sid:
+          type: string
+        name:
+          type: string
+        domain:
+          type: string
+        created:
+          type: string
+          format: date-time
+    Group:
+      type: object
+      properties:
+        id:
+          type: integer
+        key:
+          type: string
+        name:
+          type: string
+        site_id:
+          type: integer
+        contracts:
+          type: array
+          items:
+            type: integer
+        created:
+          type: string
+          format: date-time
+    Contract:
+      type: object
+      properties:
+        id:
+          type: integer
+        key:
+          type: string
+        title:
+          type: string
+        version:
+          type: string
+        published:
+          type: boolean
+    Signer:
+      type: object
+      properties:
+        id:
+          type: string
+        external_id:
+          type: string
+        email:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+    AgreedEvent:
+      type: object
+      required: [sig, gid]
+      properties:
+        sig:
+          type: string
+        gid:
+          type: integer
+        gkey:
+          type: string
+        cid:
+          type: array
+          items:
+            type: integer
+        vid:
+          type: array
+          items:
+            type: integer
+    DisplayedEvent:
+      type: object
+      required: [sig, gid]
+      properties:
+        sig:
+          type: string
+        gid:
+          type: integer
+        gkey:
+          type: string
+    VisitedEvent:
+      type: object
+      required: [sig]
+      properties:
+        sig:
+          type: string
+        url:
+          type: string
+    AcceptanceState:
+      type: object
+      properties:
+        signer:
+          type: string
+        accepted:
+          type: boolean
+        acceptance_time:
+          type: string
+          format: date-time
+        contracts:
+          type: array
+          items:
+            type: integer

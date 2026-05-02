@@ -1,0 +1,24 @@
+aid: ironclad-clickwrap
+name: Ironclad Clickwrap Rules
+description: >-
+  Governance and curation rules for the Ironclad Clickwrap company entry
+  and its clickwrap REST API documentation within the API Evangelist network.
+rules:
+  - name: API Identification
+    description: Each Ironclad Clickwrap API is identified and documented.
+    conditions:
+      - Each API entry must have an aid, name, description, humanURL, and baseURL.
+      - APIs[] must reference the OpenAPI under openapi/ironclad-clickwrap-openapi.yml.
+      - Tags must reflect clickwrap, contracts, and legal use cases.
+  - name: OpenAPI Hygiene
+    description: Keep the OpenAPI accurate and useful.
+    conditions:
+      - The OpenAPI must specify https://pactsafe.io as the production server.
+      - Endpoints for sites, groups, contracts, signers, and activity events are documented.
+      - Bearer token security scheme must reflect API key authentication.
+  - name: Metadata Currency
+    description: Maintain accurate timestamps and links.
+    conditions:
+      - Update modified date when apis.yml or OpenAPI change.
+      - Common properties include Portal, Website, and Support.
+      - README.md kept in sync with apis.yml content.

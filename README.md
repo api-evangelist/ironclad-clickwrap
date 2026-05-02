@@ -5,9 +5,9 @@ Ironclad Clickwrap is a developer-friendly platform for implementing clickwrap a
 
 ## Scope
 
-- **Type:** Index 
-- **Position:** Consuming 
-- **Access:** 3rd-Party 
+- **Type:** Index
+- **Position:** Consuming
+- **Access:** 3rd-Party
 
 ## Tags:
 
@@ -15,8 +15,8 @@ Ironclad Clickwrap is a developer-friendly platform for implementing clickwrap a
 
 ## Timestamps
 
-- **Created:** 2025-02-17 
-- **Modified:** 2026-03-16 
+- **Created:** 2025-02-17
+- **Modified:** 2026-04-28
 
 ## APIs
 
@@ -25,6 +25,7 @@ The Ironclad Clickwrap API provides comprehensive guides and documentation for i
 
 **Human URL:** [https://clickwrap-developer.ironcladapp.com/](https://clickwrap-developer.ironcladapp.com/)
 
+**Base URL:** `https://pactsafe.io`
 
 #### Tags:
 
@@ -33,6 +34,7 @@ The Ironclad Clickwrap API provides comprehensive guides and documentation for i
 #### Properties
 
 - [Documentation](https://clickwrap-developer.ironcladapp.com/)
+- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/ironclad-clickwrap/refs/heads/main/openapi/ironclad-clickwrap-openapi.yml)
 
 ## Common Properties
 
