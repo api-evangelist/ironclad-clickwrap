@@ -1,0 +1,456 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Ironclad Clickwrap API
+  description: The Ironclad Clickwrap API (formerly PactSafe) lets developers programmatically manage clickwrap and click-through
+    agreements, track user acceptance, and generate audit-ready records of consent for terms, privacy policies, and other
+    legal contracts.
+  tags:
+  - Ironclad
+  - Clickwrap
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: ironclad-clickwrap
+    baseUri: https://pactsafe.io
+    description: Ironclad Clickwrap API HTTP API.
+    authentication:
+      type: bearer
+      token: '{{IRONCLAD_CLICKWRAP_TOKEN}}'
+    resources:
+    - name: sites
+      path: /sites
+      operations:
+      - name: listsites
+        method: GET
+        description: List sites
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: sites-siteid
+      path: /sites/{siteId}
+      operations:
+      - name: getsite
+        method: GET
+        description: Get a site
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: groups
+      path: /groups
+      operations:
+      - name: listgroups
+        method: GET
+        description: List clickwrap groups
+        inputParameters:
+        - name: sid
+          in: query
+          type: integer
+          description: Site ID filter.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: groups-groupid
+      path: /groups/{groupId}
+      operations:
+      - name: getgroup
+        method: GET
+        description: Get a clickwrap group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: contracts
+      path: /contracts
+      operations:
+      - name: listcontracts
+        method: GET
+        description: List contracts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: contracts-contractid
+      path: /contracts/{contractId}
+      operations:
+      - name: getcontract
+        method: GET
+        description: Get a contract
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: signers
+      path: /signers
+      operations:
+      - name: listsigners
+        method: GET
+        description: List signers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: signers-signerid
+      path: /signers/{signerId}
+      operations:
+      - name: getsigner
+        method: GET
+        description: Get a signer
+        inputParameters:
+        - name: signerId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: send-agreed
+      path: /send/agreed
+      operations:
+      - name: sendagreed
+        method: POST
+        description: Record an agreement acceptance event
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: send-displayed
+      path: /send/displayed
+      operations:
+      - name: senddisplayed
+        method: POST
+        description: Record a contract display event
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: send-visited
+      path: /send/visited
+      operations:
+      - name: sendvisited
+        method: POST
+        description: Record a page visit event
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: retrieve-latest
+      path: /retrieve/latest
+      operations:
+      - name: retrievelatest
+        method: GET
+        description: Retrieve the latest acceptance state for a signer
+        inputParameters:
+        - name: sig
+          in: query
+          type: string
+          required: true
+          description: Signer identifier.
+        - name: gkey
+          in: query
+          type: string
+          description: Group key.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: ironclad-clickwrap-rest
+    description: REST adapter for Ironclad Clickwrap API.
+    resources:
+    - path: /sites
+      name: listsites
+      operations:
+      - method: GET
+        name: listsites
+        description: List sites
+        call: ironclad-clickwrap.listsites
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /sites/{siteId}
+      name: getsite
+      operations:
+      - method: GET
+        name: getsite
+        description: Get a site
+        call: ironclad-clickwrap.getsite
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /groups
+      name: listgroups
+      operations:
+      - method: GET
+        name: listgroups
+        description: List clickwrap groups
+        call: ironclad-clickwrap.listgroups
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /groups/{groupId}
+      name: getgroup
+      operations:
+      - method: GET
+        name: getgroup
+        description: Get a clickwrap group
+        call: ironclad-clickwrap.getgroup
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /contracts
+      name: listcontracts
+      operations:
+      - method: GET
+        name: listcontracts
+        description: List contracts
+        call: ironclad-clickwrap.listcontracts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /contracts/{contractId}
+      name: getcontract
+      operations:
+      - method: GET
+        name: getcontract
+        description: Get a contract
+        call: ironclad-clickwrap.getcontract
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /signers
+      name: listsigners
+      operations:
+      - method: GET
+        name: listsigners
+        description: List signers
+        call: ironclad-clickwrap.listsigners
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /signers/{signerId}
+      name: getsigner
+      operations:
+      - method: GET
+        name: getsigner
+        description: Get a signer
+        call: ironclad-clickwrap.getsigner
+        with:
+          signerId: rest.signerId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /send/agreed
+      name: sendagreed
+      operations:
+      - method: POST
+        name: sendagreed
+        description: Record an agreement acceptance event
+        call: ironclad-clickwrap.sendagreed
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /send/displayed
+      name: senddisplayed
+      operations:
+      - method: POST
+        name: senddisplayed
+        description: Record a contract display event
+        call: ironclad-clickwrap.senddisplayed
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /send/visited
+      name: sendvisited
+      operations:
+      - method: POST
+        name: sendvisited
+        description: Record a page visit event
+        call: ironclad-clickwrap.sendvisited
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /retrieve/latest
+      name: retrievelatest
+      operations:
+      - method: GET
+        name: retrievelatest
+        description: Retrieve the latest acceptance state for a signer
+        call: ironclad-clickwrap.retrievelatest
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: ironclad-clickwrap-mcp
+    transport: http
+    description: MCP adapter for Ironclad Clickwrap API for AI agent use.
+    tools:
+    - name: listsites
+      description: List sites
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ironclad-clickwrap.listsites
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getsite
+      description: Get a site
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ironclad-clickwrap.getsite
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listgroups
+      description: List clickwrap groups
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ironclad-clickwrap.listgroups
+      with:
+        sid: tools.sid
+      inputParameters:
+      - name: sid
+        type: integer
+        description: Site ID filter.
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getgroup
+      description: Get a clickwrap group
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ironclad-clickwrap.getgroup
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listcontracts
+      description: List contracts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ironclad-clickwrap.listcontracts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcontract
+      description: Get a contract
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ironclad-clickwrap.getcontract
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listsigners
+      description: List signers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ironclad-clickwrap.listsigners
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getsigner
+      description: Get a signer
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ironclad-clickwrap.getsigner
+      with:
+        signerId: tools.signerId
+      inputParameters:
+      - name: signerId
+        type: string
+        description: signerId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sendagreed
+      description: Record an agreement acceptance event
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ironclad-clickwrap.sendagreed
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: senddisplayed
+      description: Record a contract display event
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ironclad-clickwrap.senddisplayed
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sendvisited
+      description: Record a page visit event
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ironclad-clickwrap.sendvisited
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: retrievelatest
+      description: Retrieve the latest acceptance state for a signer
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ironclad-clickwrap.retrievelatest
+      with:
+        sig: tools.sig
+        gkey: tools.gkey
+      inputParameters:
+      - name: sig
+        type: string
+        description: Signer identifier.
+        required: true
+      - name: gkey
+        type: string
+        description: Group key.
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    IRONCLAD_CLICKWRAP_TOKEN: IRONCLAD_CLICKWRAP_TOKEN
