@@ -43,6 +43,27 @@ common:
     url: https://ironcladapp.com/
   - type: Support
     url: https://ironcladapp.com/support/
+  - type: Integrations
+    url: https://ironcladapp.com/product/integrations
+integrations:
+  - name: ironclad
+  - name: abstracted contract workflow
+  - name: clipboard
+  - name: icon of plugs
+  - name: arrow
+  - name: type bar for ai assistant Jurist
+  - name: scroll
+  - name: folder
+  - name: laptop
+  - name: briefcase
+  - name: 2026 Contracting Benchmark Report
+  - name: squiggle line
+  - name: open book
+  - name: 'What''s New at Ironclad: April'
+  - name: LinkedIn
+  - name: facebook
+  - name: instagram
+  - name: YouTube
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
