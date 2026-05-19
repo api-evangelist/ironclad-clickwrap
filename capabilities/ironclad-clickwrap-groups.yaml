@@ -1,0 +1,111 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Ironclad Clickwrap API — Groups
+  description: 'Ironclad Clickwrap API — Groups. 2 operations. Lead operation: List clickwrap groups. Self-contained Naftiko
+    capability covering one Ironclad Clickwrap business surface.'
+  tags:
+  - Ironclad Clickwrap
+  - Groups
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IRONCLAD_CLICKWRAP_API_KEY: IRONCLAD_CLICKWRAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ironclad-clickwrap-groups
+    baseUri: https://pactsafe.io
+    description: Ironclad Clickwrap API — Groups business capability. Self-contained, no shared references.
+    resources:
+    - name: groups
+      path: /groups
+      operations:
+      - name: listgroups
+        method: GET
+        description: List clickwrap groups
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sid
+          in: query
+          type: integer
+          description: Site ID filter.
+    - name: groups-groupId
+      path: /groups/{groupId}
+      operations:
+      - name: getgroup
+        method: GET
+        description: Get a clickwrap group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.IRONCLAD_CLICKWRAP_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ironclad-clickwrap-groups-rest
+    port: 8080
+    description: REST adapter for Ironclad Clickwrap API — Groups. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/groups
+      name: groups
+      description: REST surface for groups.
+      operations:
+      - method: GET
+        name: listgroups
+        description: List clickwrap groups
+        call: ironclad-clickwrap-groups.listgroups
+        with:
+          sid: rest.sid
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/groups/{groupid}
+      name: groups-groupid
+      description: REST surface for groups-groupId.
+      operations:
+      - method: GET
+        name: getgroup
+        description: Get a clickwrap group
+        call: ironclad-clickwrap-groups.getgroup
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ironclad-clickwrap-groups-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Ironclad Clickwrap API — Groups. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-clickwrap-groups
+      description: List clickwrap groups
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ironclad-clickwrap-groups.listgroups
+      with:
+        sid: tools.sid
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-clickwrap-group
+      description: Get a clickwrap group
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ironclad-clickwrap-groups.getgroup
+      outputParameters:
+      - type: object
+        mapping: $.

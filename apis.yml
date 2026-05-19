@@ -1,69 +1,75 @@
 aid: ironclad-clickwrap
 name: Ironclad Clickwrap
-description: >-
-  Ironclad Clickwrap is a developer-friendly platform for implementing
-  clickwrap agreements, terms of service, and contract acceptance workflows.
-  The Ironclad Clickwrap API enables developers to programmatically manage
-  clickwrap agreements, record user acceptance, and generate audit trails.
+description: Ironclad Clickwrap is a developer-friendly platform for implementing clickwrap agreements, terms of service,
+  and contract acceptance workflows. The Ironclad Clickwrap API enables developers to programmatically manage clickwrap agreements,
+  record user acceptance, and generate audit trails.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Agreements
-  - Compliance
-  - Contracts
-  - Legal
+- Agreements
+- Compliance
+- Contracts
+- Legal
 created: '2025-02-17'
-modified: '2026-04-28'
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/ironclad-clickwrap/refs/heads/main/apis.yml
+modified: '2026-05-19'
+url: https://raw.githubusercontent.com/api-evangelist/ironclad-clickwrap/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-  - aid: ironclad-clickwrap:ironclad-clickwrap-api
-    name: Ironclad Clickwrap API
-    description: >-
-      The Ironclad Clickwrap API provides comprehensive guides and documentation
-      for implementing clickwrap agreements, managing contract acceptance, and
-      building compliant legal workflows.
-    humanURL: https://clickwrap-developer.ironcladapp.com/
-    baseURL: https://pactsafe.io
-    tags:
-      - Clickwrap
-      - Contracts
-      - Legal
-    properties:
-      - type: Documentation
-        url: https://clickwrap-developer.ironcladapp.com/
-      - type: OpenAPI
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/ironclad-clickwrap/refs/heads/main/openapi/ironclad-clickwrap-openapi.yml
-common:
-  - type: Portal
+- aid: ironclad-clickwrap:ironclad-clickwrap-api
+  name: Ironclad Clickwrap API
+  description: The Ironclad Clickwrap API provides comprehensive guides and documentation for implementing clickwrap agreements,
+    managing contract acceptance, and building compliant legal workflows.
+  humanURL: https://clickwrap-developer.ironcladapp.com/
+  baseURL: https://pactsafe.io
+  tags:
+  - Clickwrap
+  - Contracts
+  - Legal
+  properties:
+  - type: Documentation
     url: https://clickwrap-developer.ironcladapp.com/
-  - type: Website
-    url: https://ironcladapp.com/
-  - type: Support
-    url: https://ironcladapp.com/support/
-  - type: Integrations
-    url: https://ironcladapp.com/product/integrations
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/api-evangelist/ironclad-clickwrap/refs/heads/main/openapi/ironclad-clickwrap-openapi.yml
+  - type: NaftikoCapability
+    url: capabilities/ironclad-clickwrap-activity.yaml
+  - type: NaftikoCapability
+    url: capabilities/ironclad-clickwrap-contracts.yaml
+  - type: NaftikoCapability
+    url: capabilities/ironclad-clickwrap-groups.yaml
+  - type: NaftikoCapability
+    url: capabilities/ironclad-clickwrap-signers.yaml
+  - type: NaftikoCapability
+    url: capabilities/ironclad-clickwrap-sites.yaml
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/ironclad-inc-
+- type: Portal
+  url: https://clickwrap-developer.ironcladapp.com/
+- type: Website
+  url: https://ironcladapp.com/
+- type: Support
+  url: https://ironcladapp.com/support/
+- type: Integrations
+  url: https://ironcladapp.com/product/integrations
 integrations:
-  - name: ironclad
-  - name: abstracted contract workflow
-  - name: clipboard
-  - name: icon of plugs
-  - name: arrow
-  - name: type bar for ai assistant Jurist
-  - name: scroll
-  - name: folder
-  - name: laptop
-  - name: briefcase
-  - name: 2026 Contracting Benchmark Report
-  - name: squiggle line
-  - name: open book
-  - name: 'What''s New at Ironclad: April'
-  - name: LinkedIn
-  - name: facebook
-  - name: instagram
-  - name: YouTube
+- name: ironclad
+- name: abstracted contract workflow
+- name: clipboard
+- name: icon of plugs
+- name: arrow
+- name: type bar for ai assistant Jurist
+- name: scroll
+- name: folder
+- name: laptop
+- name: briefcase
+- name: 2026 Contracting Benchmark Report
+- name: squiggle line
+- name: open book
+- name: 'What''s New at Ironclad: April'
+- name: LinkedIn
+- name: facebook
+- name: instagram
+- name: YouTube
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com

@@ -1,0 +1,111 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Ironclad Clickwrap API — Signers
+  description: 'Ironclad Clickwrap API — Signers. 2 operations. Lead operation: List signers. Self-contained Naftiko capability
+    covering one Ironclad Clickwrap business surface.'
+  tags:
+  - Ironclad Clickwrap
+  - Signers
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IRONCLAD_CLICKWRAP_API_KEY: IRONCLAD_CLICKWRAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ironclad-clickwrap-signers
+    baseUri: https://pactsafe.io
+    description: Ironclad Clickwrap API — Signers business capability. Self-contained, no shared references.
+    resources:
+    - name: signers
+      path: /signers
+      operations:
+      - name: listsigners
+        method: GET
+        description: List signers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: signers-signerId
+      path: /signers/{signerId}
+      operations:
+      - name: getsigner
+        method: GET
+        description: Get a signer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: signerId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IRONCLAD_CLICKWRAP_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ironclad-clickwrap-signers-rest
+    port: 8080
+    description: REST adapter for Ironclad Clickwrap API — Signers. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/signers
+      name: signers
+      description: REST surface for signers.
+      operations:
+      - method: GET
+        name: listsigners
+        description: List signers
+        call: ironclad-clickwrap-signers.listsigners
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/signers/{signerid}
+      name: signers-signerid
+      description: REST surface for signers-signerId.
+      operations:
+      - method: GET
+        name: getsigner
+        description: Get a signer
+        call: ironclad-clickwrap-signers.getsigner
+        with:
+          signerId: rest.signerId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ironclad-clickwrap-signers-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Ironclad Clickwrap API — Signers. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-signers
+      description: List signers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ironclad-clickwrap-signers.listsigners
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-signer
+      description: Get a signer
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ironclad-clickwrap-signers.getsigner
+      with:
+        signerId: tools.signerId
+      outputParameters:
+      - type: object
+        mapping: $.

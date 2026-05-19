@@ -1,0 +1,102 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Ironclad Clickwrap API — Sites
+  description: 'Ironclad Clickwrap API — Sites. 2 operations. Lead operation: List sites. Self-contained Naftiko capability
+    covering one Ironclad Clickwrap business surface.'
+  tags:
+  - Ironclad Clickwrap
+  - Sites
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IRONCLAD_CLICKWRAP_API_KEY: IRONCLAD_CLICKWRAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ironclad-clickwrap-sites
+    baseUri: https://pactsafe.io
+    description: Ironclad Clickwrap API — Sites business capability. Self-contained, no shared references.
+    resources:
+    - name: sites
+      path: /sites
+      operations:
+      - name: listsites
+        method: GET
+        description: List sites
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: sites-siteId
+      path: /sites/{siteId}
+      operations:
+      - name: getsite
+        method: GET
+        description: Get a site
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.IRONCLAD_CLICKWRAP_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ironclad-clickwrap-sites-rest
+    port: 8080
+    description: REST adapter for Ironclad Clickwrap API — Sites. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/sites
+      name: sites
+      description: REST surface for sites.
+      operations:
+      - method: GET
+        name: listsites
+        description: List sites
+        call: ironclad-clickwrap-sites.listsites
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/sites/{siteid}
+      name: sites-siteid
+      description: REST surface for sites-siteId.
+      operations:
+      - method: GET
+        name: getsite
+        description: Get a site
+        call: ironclad-clickwrap-sites.getsite
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ironclad-clickwrap-sites-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Ironclad Clickwrap API — Sites. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-sites
+      description: List sites
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ironclad-clickwrap-sites.listsites
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-site
+      description: Get a site
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ironclad-clickwrap-sites.getsite
+      outputParameters:
+      - type: object
+        mapping: $.

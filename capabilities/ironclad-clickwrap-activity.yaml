@@ -1,0 +1,212 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Ironclad Clickwrap API — Activity
+  description: 'Ironclad Clickwrap API — Activity. 4 operations. Lead operation: Retrieve the latest acceptance state for
+    a signer. Self-contained Naftiko capability covering one Ironclad Clickwrap business surface.'
+  tags:
+  - Ironclad Clickwrap
+  - Activity
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    IRONCLAD_CLICKWRAP_API_KEY: IRONCLAD_CLICKWRAP_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: ironclad-clickwrap-activity
+    baseUri: https://pactsafe.io
+    description: Ironclad Clickwrap API — Activity business capability. Self-contained, no shared references.
+    resources:
+    - name: retrieve-latest
+      path: /retrieve/latest
+      operations:
+      - name: retrievelatest
+        method: GET
+        description: Retrieve the latest acceptance state for a signer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: sig
+          in: query
+          type: string
+          description: Signer identifier.
+          required: true
+        - name: gkey
+          in: query
+          type: string
+          description: Group key.
+    - name: send-agreed
+      path: /send/agreed
+      operations:
+      - name: sendagreed
+        method: POST
+        description: Record an agreement acceptance event
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: send-displayed
+      path: /send/displayed
+      operations:
+      - name: senddisplayed
+        method: POST
+        description: Record a contract display event
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: send-visited
+      path: /send/visited
+      operations:
+      - name: sendvisited
+        method: POST
+        description: Record a page visit event
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.IRONCLAD_CLICKWRAP_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: ironclad-clickwrap-activity-rest
+    port: 8080
+    description: REST adapter for Ironclad Clickwrap API — Activity. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/retrieve/latest
+      name: retrieve-latest
+      description: REST surface for retrieve-latest.
+      operations:
+      - method: GET
+        name: retrievelatest
+        description: Retrieve the latest acceptance state for a signer
+        call: ironclad-clickwrap-activity.retrievelatest
+        with:
+          sig: rest.sig
+          gkey: rest.gkey
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/send/agreed
+      name: send-agreed
+      description: REST surface for send-agreed.
+      operations:
+      - method: POST
+        name: sendagreed
+        description: Record an agreement acceptance event
+        call: ironclad-clickwrap-activity.sendagreed
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/send/displayed
+      name: send-displayed
+      description: REST surface for send-displayed.
+      operations:
+      - method: POST
+        name: senddisplayed
+        description: Record a contract display event
+        call: ironclad-clickwrap-activity.senddisplayed
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/send/visited
+      name: send-visited
+      description: REST surface for send-visited.
+      operations:
+      - method: POST
+        name: sendvisited
+        description: Record a page visit event
+        call: ironclad-clickwrap-activity.sendvisited
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: ironclad-clickwrap-activity-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Ironclad Clickwrap API — Activity. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: retrieve-latest-acceptance-state-signer
+      description: Retrieve the latest acceptance state for a signer
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: ironclad-clickwrap-activity.retrievelatest
+      with:
+        sig: tools.sig
+        gkey: tools.gkey
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: record-agreement-acceptance-event
+      description: Record an agreement acceptance event
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ironclad-clickwrap-activity.sendagreed
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: record-contract-display-event
+      description: Record a contract display event
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ironclad-clickwrap-activity.senddisplayed
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: record-page-visit-event
+      description: Record a page visit event
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: ironclad-clickwrap-activity.sendvisited
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
