@@ -53,6 +53,8 @@ common:
     url: https://ironcladapp.com/support/
   - type: Integrations
     url: https://ironcladapp.com/product/integrations
+  - type: LLMsTxt
+    url: https://clickwrap-developer.ironcladapp.com/llms.txt
 integrations:
   - name: ironclad
   - name: abstracted contract workflow
