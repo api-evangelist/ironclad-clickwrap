@@ -1,0 +1,1138 @@
+{
+  "item": [
+    {
+      "id": "a1dea147-46ea-46d1-b2f6-51bf1b20c0b0",
+      "name": "Sites",
+      "description": {
+        "content": "Manage sites that host clickwrap groups.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7c47c84c-76d6-47c1-8d79-5da98bd34a33",
+          "name": "List sites",
+          "request": {
+            "name": "List sites",
+            "description": {},
+            "url": {
+              "path": [
+                "sites"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f149b30e-865f-4afc-837e-5e530df28c7e",
+              "name": "List of sites.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sites"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 2890,\n    \"sid\": \"string\",\n    \"name\": \"string\",\n    \"domain\": \"string\",\n    \"created\": \"1997-07-20T07:21:44.025Z\"\n  },\n  {\n    \"id\": 6411,\n    \"sid\": \"string\",\n    \"name\": \"string\",\n    \"domain\": \"string\",\n    \"created\": \"1973-09-01T11:38:31.964Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b7fb06de-e0a9-4522-a5d1-c64d13539b17",
+          "name": "Get a site",
+          "request": {
+            "name": "Get a site",
+            "description": {},
+            "url": {
+              "path": [
+                "sites",
+                ":siteId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dfd02087-a918-4856-a46c-c3da936a4e11",
+              "name": "A site.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sites",
+                    ":siteId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6935,\n  \"sid\": \"string\",\n  \"name\": \"string\",\n  \"domain\": \"string\",\n  \"created\": \"1992-06-30T09:19:58.472Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "03e6e0b2-e315-4358-805d-01f99058bce2",
+      "name": "Groups",
+      "description": {
+        "content": "Manage clickwrap groups (containers of contracts).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8f50af86-6de3-475f-a6c3-d00ea635277f",
+          "name": "List clickwrap groups",
+          "request": {
+            "name": "List clickwrap groups",
+            "description": {},
+            "url": {
+              "path": [
+                "groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sid",
+                  "value": "<integer>",
+                  "description": "Site ID filter."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0699d593-6d9a-4f14-9bb6-b05a2e8626fe",
+              "name": "List of groups.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sid",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 6867,\n    \"key\": \"string\",\n    \"name\": \"string\",\n    \"site_id\": 5637,\n    \"contracts\": [\n      7376,\n      2877\n    ],\n    \"created\": \"1954-03-28T16:27:40.966Z\"\n  },\n  {\n    \"id\": 6394,\n    \"key\": \"string\",\n    \"name\": \"string\",\n    \"site_id\": 8754,\n    \"contracts\": [\n      1806,\n      9565\n    ],\n    \"created\": \"1994-04-25T14:40:28.621Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e468318f-4863-410b-b1fe-e78e159eb6c9",
+          "name": "Get a clickwrap group",
+          "request": {
+            "name": "Get a clickwrap group",
+            "description": {},
+            "url": {
+              "path": [
+                "groups",
+                ":groupId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9f8a2b22-f2e7-45a5-8623-8d0bbb0667c4",
+              "name": "A group.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "groups",
+                    ":groupId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1602,\n  \"key\": \"string\",\n  \"name\": \"string\",\n  \"site_id\": 8374,\n  \"contracts\": [\n    7232,\n    8599\n  ],\n  \"created\": \"1950-06-07T14:33:49.743Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "21c4669a-3169-4f22-9b16-59044c8f90ff",
+      "name": "Contracts",
+      "description": {
+        "content": "Manage individual contract documents.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "31d86972-0b27-4605-9787-8069a35daa32",
+          "name": "List contracts",
+          "request": {
+            "name": "List contracts",
+            "description": {},
+            "url": {
+              "path": [
+                "contracts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6dd5a5df-5d64-47f4-883b-fbb90b8c3f98",
+              "name": "List of contracts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contracts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 840,\n    \"key\": \"string\",\n    \"title\": \"string\",\n    \"version\": \"string\",\n    \"published\": true\n  },\n  {\n    \"id\": 6075,\n    \"key\": \"string\",\n    \"title\": \"string\",\n    \"version\": \"string\",\n    \"published\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cff44862-7a17-4b41-bd79-e580b8f99946",
+          "name": "Get a contract",
+          "request": {
+            "name": "Get a contract",
+            "description": {},
+            "url": {
+              "path": [
+                "contracts",
+                ":contractId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "contractId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "451b019b-5b4d-4f48-9c96-d10e69f935d7",
+              "name": "A contract.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contracts",
+                    ":contractId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "contractId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 7371,\n  \"key\": \"string\",\n  \"title\": \"string\",\n  \"version\": \"string\",\n  \"published\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ca794112-3f82-4b19-ba83-79a901cb02fa",
+      "name": "Signers",
+      "description": {
+        "content": "Manage end users who accept agreements.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f5caa5d2-3367-4ff4-a7bb-4c3c1bc38497",
+          "name": "List signers",
+          "request": {
+            "name": "List signers",
+            "description": {},
+            "url": {
+              "path": [
+                "signers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "256aebe4-a42e-4d0e-bae6-fe94c72721fe",
+              "name": "List of signers.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "signers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"external_id\": \"string\",\n    \"email\": \"string\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"external_id\": \"string\",\n    \"email\": \"string\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "75355c78-30e3-4f66-843a-7b891391a6a8",
+          "name": "Get a signer",
+          "request": {
+            "name": "Get a signer",
+            "description": {},
+            "url": {
+              "path": [
+                "signers",
+                ":signerId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "signerId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "06e5d632-b0d4-44ba-94d7-9979e8c7fee8",
+              "name": "A signer.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "signers",
+                    ":signerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signerId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"external_id\": \"string\",\n  \"email\": \"string\",\n  \"first_name\": \"string\",\n  \"last_name\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c513031a-e6c8-46ee-ba4d-d98385fc9f8e",
+      "name": "Activity",
+      "description": {
+        "content": "Send acceptance, rejection, and view events.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "72320b63-d4b9-40ae-b091-da3046af9e58",
+          "name": "Record an agreement acceptance event",
+          "request": {
+            "name": "Record an agreement acceptance event",
+            "description": {},
+            "url": {
+              "path": [
+                "send",
+                "agreed"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sig\": \"<string>\",\n  \"gid\": \"<integer>\",\n  \"gkey\": \"<string>\",\n  \"cid\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"vid\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "02c02b7b-004c-42c5-9ae2-cd01a939e21a",
+              "name": "Event recorded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "send",
+                    "agreed"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sig\": \"<string>\",\n  \"gid\": \"<integer>\",\n  \"gkey\": \"<string>\",\n  \"cid\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"vid\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "790a0dd8-4fa5-4112-89e8-3479a82f6d3a",
+          "name": "Record a contract display event",
+          "request": {
+            "name": "Record a contract display event",
+            "description": {},
+            "url": {
+              "path": [
+                "send",
+                "displayed"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sig\": \"<string>\",\n  \"gid\": \"<integer>\",\n  \"gkey\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ca15f19c-fbb7-4082-aba6-fe348d50063a",
+              "name": "Event recorded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "send",
+                    "displayed"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sig\": \"<string>\",\n  \"gid\": \"<integer>\",\n  \"gkey\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fe484141-4776-4052-ade2-dffae2cd90de",
+          "name": "Record a page visit event",
+          "request": {
+            "name": "Record a page visit event",
+            "description": {},
+            "url": {
+              "path": [
+                "send",
+                "visited"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sig\": \"<string>\",\n  \"url\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b0fb4a93-9572-4ff4-9cf3-5ffa2d46139b",
+              "name": "Event recorded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "send",
+                    "visited"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sig\": \"<string>\",\n  \"url\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "482b4c33-96b4-41dd-976e-12be74eb2b5d",
+          "name": "Retrieve the latest acceptance state for a signer",
+          "request": {
+            "name": "Retrieve the latest acceptance state for a signer",
+            "description": {},
+            "url": {
+              "path": [
+                "retrieve",
+                "latest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sig",
+                  "value": "<string>",
+                  "description": "(Required) Signer identifier."
+                },
+                {
+                  "disabled": false,
+                  "key": "gkey",
+                  "value": "<string>",
+                  "description": "Group key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f8949b3c-bbd9-45f0-9a1c-701ea0a7c0c9",
+              "name": "Acceptance state.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "retrieve",
+                    "latest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sig",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "gkey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"signer\": \"string\",\n  \"accepted\": false,\n  \"acceptance_time\": \"1983-03-14T00:44:22.221Z\",\n  \"contracts\": [\n    818,\n    5960\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://pactsafe.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f6a19429-f1d6-4fa3-ad2f-c21a7c1afb36",
+    "name": "Ironclad Clickwrap API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ironclad Clickwrap API (formerly PactSafe) lets developers programmatically manage clickwrap and click-through agreements, track user acceptance, and generate audit-ready records of consent for terms, privacy policies, and other legal contracts.\n\nContact Support:\n Name: Ironclad Clickwrap Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,250 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ironclad Clickwrap API",
+    "version": "1.1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sites",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List sites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://pactsafe.io/sites"
+          },
+          "docs": "List sites"
+        },
+        {
+          "info": {
+            "name": "Get a site",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://pactsafe.io/sites/:siteId",
+            "params": [
+              {
+                "name": "siteId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a site"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List clickwrap groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://pactsafe.io/groups",
+            "params": [
+              {
+                "name": "sid",
+                "value": "",
+                "type": "query",
+                "description": "Site ID filter."
+              }
+            ]
+          },
+          "docs": "List clickwrap groups"
+        },
+        {
+          "info": {
+            "name": "Get a clickwrap group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://pactsafe.io/groups/:groupId",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a clickwrap group"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Contracts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List contracts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://pactsafe.io/contracts"
+          },
+          "docs": "List contracts"
+        },
+        {
+          "info": {
+            "name": "Get a contract",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://pactsafe.io/contracts/:contractId",
+            "params": [
+              {
+                "name": "contractId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a contract"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Signers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List signers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://pactsafe.io/signers"
+          },
+          "docs": "List signers"
+        },
+        {
+          "info": {
+            "name": "Get a signer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://pactsafe.io/signers/:signerId",
+            "params": [
+              {
+                "name": "signerId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a signer"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Activity",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Record an agreement acceptance event",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://pactsafe.io/send/agreed",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Record an agreement acceptance event"
+        },
+        {
+          "info": {
+            "name": "Record a contract display event",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://pactsafe.io/send/displayed",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Record a contract display event"
+        },
+        {
+          "info": {
+            "name": "Record a page visit event",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://pactsafe.io/send/visited",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Record a page visit event"
+        },
+        {
+          "info": {
+            "name": "Retrieve the latest acceptance state for a signer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://pactsafe.io/retrieve/latest",
+            "params": [
+              {
+                "name": "sig",
+                "value": "",
+                "type": "query",
+                "description": "Signer identifier."
+              },
+              {
+                "name": "gkey",
+                "value": "",
+                "type": "query",
+                "description": "Group key."
+              }
+            ]
+          },
+          "docs": "Retrieve the latest acceptance state for a signer"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
