@@ -34,6 +34,12 @@ apis:
         url: >-
           https://raw.githubusercontent.com/api-evangelist/ironclad-clickwrap/refs/heads/main/openapi/ironclad-clickwrap-openapi.yml
 common:
+  - type: TrustCenter
+    url: security/ironclad-clickwrap-trust-center.yml
+  - type: DomainSecurity
+    url: security/ironclad-clickwrap-domain-security.yml
+  - type: Authentication
+    url: authentication/ironclad-clickwrap-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/pactsafe
   - type: LinkedIn
