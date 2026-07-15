@@ -34,6 +34,8 @@ apis:
         url: >-
           https://raw.githubusercontent.com/api-evangelist/ironclad-clickwrap/refs/heads/main/openapi/ironclad-clickwrap-openapi.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/ironclad-clickwrap-agentic-access.yml
   - type: TrustCenter
     url: security/ironclad-clickwrap-trust-center.yml
   - type: DomainSecurity
