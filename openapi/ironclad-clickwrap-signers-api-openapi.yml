@@ -1,0 +1,74 @@
+openapi: 3.0.3
+info:
+  title: Ironclad Clickwrap Activity Signers API
+  description: The Ironclad Clickwrap API (formerly PactSafe) lets developers programmatically manage clickwrap and click-through agreements, track user acceptance, and generate audit-ready records of consent for terms, privacy policies, and other legal contracts.
+  version: '1.1'
+  contact:
+    name: Ironclad Clickwrap Support
+    url: https://ironcladapp.com/support/
+  license:
+    name: Proprietary
+    url: https://ironcladapp.com/
+servers:
+- url: https://pactsafe.io
+  description: Ironclad Clickwrap API production base URL
+security:
+- bearerAuth: []
+tags:
+- name: Signers
+  description: Manage end users who accept agreements.
+paths:
+  /signers:
+    get:
+      tags:
+      - Signers
+      summary: List signers
+      operationId: listSigners
+      responses:
+        '200':
+          description: List of signers.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Signer'
+  /signers/{signerId}:
+    get:
+      tags:
+      - Signers
+      summary: Get a signer
+      operationId: getSigner
+      parameters:
+      - name: signerId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A signer.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Signer'
+components:
+  schemas:
+    Signer:
+      type: object
+      properties:
+        id:
+          type: string
+        external_id:
+          type: string
+        email:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API Key

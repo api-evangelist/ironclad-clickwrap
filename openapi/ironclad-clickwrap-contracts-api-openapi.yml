@@ -1,0 +1,77 @@
+openapi: 3.0.3
+info:
+  title: Ironclad Clickwrap Activity Contracts API
+  description: The Ironclad Clickwrap API (formerly PactSafe) lets developers programmatically manage clickwrap and click-through agreements, track user acceptance, and generate audit-ready records of consent for terms, privacy policies, and other legal contracts.
+  version: '1.1'
+  contact:
+    name: Ironclad Clickwrap Support
+    url: https://ironcladapp.com/support/
+  license:
+    name: Proprietary
+    url: https://ironcladapp.com/
+servers:
+- url: https://pactsafe.io
+  description: Ironclad Clickwrap API production base URL
+security:
+- bearerAuth: []
+tags:
+- name: Contracts
+  description: Manage individual contract documents.
+paths:
+  /contracts:
+    get:
+      tags:
+      - Contracts
+      summary: List contracts
+      operationId: listContracts
+      responses:
+        '200':
+          description: List of contracts.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contract'
+  /contracts/{contractId}:
+    get:
+      tags:
+      - Contracts
+      summary: Get a contract
+      operationId: getContract
+      parameters:
+      - $ref: '#/components/parameters/ContractId'
+      responses:
+        '200':
+          description: A contract.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contract'
+components:
+  schemas:
+    Contract:
+      type: object
+      properties:
+        id:
+          type: integer
+        key:
+          type: string
+        title:
+          type: string
+        version:
+          type: string
+        published:
+          type: boolean
+  parameters:
+    ContractId:
+      name: contractId
+      in: path
+      required: true
+      schema:
+        type: integer
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API Key

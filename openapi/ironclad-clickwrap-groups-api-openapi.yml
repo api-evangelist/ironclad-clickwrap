@@ -1,0 +1,88 @@
+openapi: 3.0.3
+info:
+  title: Ironclad Clickwrap Activity Groups API
+  description: The Ironclad Clickwrap API (formerly PactSafe) lets developers programmatically manage clickwrap and click-through agreements, track user acceptance, and generate audit-ready records of consent for terms, privacy policies, and other legal contracts.
+  version: '1.1'
+  contact:
+    name: Ironclad Clickwrap Support
+    url: https://ironcladapp.com/support/
+  license:
+    name: Proprietary
+    url: https://ironcladapp.com/
+servers:
+- url: https://pactsafe.io
+  description: Ironclad Clickwrap API production base URL
+security:
+- bearerAuth: []
+tags:
+- name: Groups
+  description: Manage clickwrap groups (containers of contracts).
+paths:
+  /groups:
+    get:
+      tags:
+      - Groups
+      summary: List clickwrap groups
+      operationId: listGroups
+      parameters:
+      - name: sid
+        in: query
+        schema:
+          type: integer
+        description: Site ID filter.
+      responses:
+        '200':
+          description: List of groups.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Group'
+  /groups/{groupId}:
+    get:
+      tags:
+      - Groups
+      summary: Get a clickwrap group
+      operationId: getGroup
+      parameters:
+      - $ref: '#/components/parameters/GroupId'
+      responses:
+        '200':
+          description: A group.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+components:
+  parameters:
+    GroupId:
+      name: groupId
+      in: path
+      required: true
+      schema:
+        type: integer
+  schemas:
+    Group:
+      type: object
+      properties:
+        id:
+          type: integer
+        key:
+          type: string
+        name:
+          type: string
+        site_id:
+          type: integer
+        contracts:
+          type: array
+          items:
+            type: integer
+        created:
+          type: string
+          format: date-time
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API Key
