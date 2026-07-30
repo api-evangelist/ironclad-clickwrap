@@ -5,7 +5,20 @@ description: >-
   contract acceptance workflows. The Ironclad Clickwrap API enables developers to programmatically manage clickwrap
   agreements, record user acceptance, and generate audit trails.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ironclad-clickwrap.png
 tags:
   - Agreements
   - Compliance
@@ -16,23 +29,66 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/ironclad-clickwrap/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-  - aid: ironclad-clickwrap:ironclad-clickwrap-api
-    name: Ironclad Clickwrap API
-    description: >-
-      The Ironclad Clickwrap API provides comprehensive guides and documentation for implementing clickwrap agreements,
-      managing contract acceptance, and building compliant legal workflows.
-    humanURL: https://clickwrap-developer.ironcladapp.com/
-    baseURL: https://pactsafe.io
-    tags:
-      - Clickwrap
-      - Contracts
-      - Legal
-    properties:
-      - type: Documentation
-        url: https://clickwrap-developer.ironcladapp.com/
-      - type: OpenAPI
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/ironclad-clickwrap/refs/heads/main/openapi/ironclad-clickwrap-openapi.yml
+- aid: ironclad-clickwrap:ironclad-clickwrap-activity-api
+  name: Ironclad Clickwrap Activity API
+  description: Send acceptance, rejection, and view events.
+  humanURL: https://clickwrap-developer.ironcladapp.com/
+  baseURL: https://pactsafe.io
+  tags:
+  - Activity
+  properties:
+  - type: OpenAPI
+    url: openapi/ironclad-clickwrap-activity-api-openapi.yml
+  - type: Documentation
+    url: https://clickwrap-developer.ironcladapp.com/
+- aid: ironclad-clickwrap:ironclad-clickwrap-contracts-api
+  name: Ironclad Clickwrap Contracts API
+  description: Manage individual contract documents.
+  humanURL: https://clickwrap-developer.ironcladapp.com/
+  baseURL: https://pactsafe.io
+  tags:
+  - Contracts
+  properties:
+  - type: OpenAPI
+    url: openapi/ironclad-clickwrap-contracts-api-openapi.yml
+  - type: Documentation
+    url: https://clickwrap-developer.ironcladapp.com/
+- aid: ironclad-clickwrap:ironclad-clickwrap-groups-api
+  name: Ironclad Clickwrap Groups API
+  description: Manage clickwrap groups (containers of contracts).
+  humanURL: https://clickwrap-developer.ironcladapp.com/
+  baseURL: https://pactsafe.io
+  tags:
+  - Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/ironclad-clickwrap-groups-api-openapi.yml
+  - type: Documentation
+    url: https://clickwrap-developer.ironcladapp.com/
+- aid: ironclad-clickwrap:ironclad-clickwrap-signers-api
+  name: Ironclad Clickwrap Signers API
+  description: Manage end users who accept agreements.
+  humanURL: https://clickwrap-developer.ironcladapp.com/
+  baseURL: https://pactsafe.io
+  tags:
+  - Signers
+  properties:
+  - type: OpenAPI
+    url: openapi/ironclad-clickwrap-signers-api-openapi.yml
+  - type: Documentation
+    url: https://clickwrap-developer.ironcladapp.com/
+- aid: ironclad-clickwrap:ironclad-clickwrap-sites-api
+  name: Ironclad Clickwrap Sites API
+  description: Manage sites that host clickwrap groups.
+  humanURL: https://clickwrap-developer.ironcladapp.com/
+  baseURL: https://pactsafe.io
+  tags:
+  - Sites
+  properties:
+  - type: OpenAPI
+    url: openapi/ironclad-clickwrap-sites-api-openapi.yml
+  - type: Documentation
+    url: https://clickwrap-developer.ironcladapp.com/
 common:
   - type: AgenticAccess
     url: agentic-access/ironclad-clickwrap-agentic-access.yml
