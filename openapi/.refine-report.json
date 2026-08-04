@@ -1,0 +1,22 @@
+{
+  "provider": "ironclad-clickwrap",
+  "sources": [
+    "ironclad-clickwrap-activity-api-openapi.yml",
+    "ironclad-clickwrap-contracts-api-openapi.yml",
+    "ironclad-clickwrap-groups-api-openapi.yml",
+    "ironclad-clickwrap-signers-api-openapi.yml",
+    "ironclad-clickwrap-sites-api-openapi.yml"
+  ],
+  "outputs": [
+    "ironclad-clickwrap-activity-api-openapi.yml",
+    "ironclad-clickwrap-contracts-api-openapi.yml",
+    "ironclad-clickwrap-groups-api-openapi.yml",
+    "ironclad-clickwrap-signers-api-openapi.yml",
+    "ironclad-clickwrap-sites-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
