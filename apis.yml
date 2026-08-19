@@ -27,7 +27,7 @@ tags:
 created: '2025-02-17'
 modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/ironclad-clickwrap/refs/heads/main/apis.yml
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: ironclad-clickwrap:ironclad-clickwrap-activity-api
   name: Ironclad Clickwrap Activity API
