@@ -1,0 +1,209 @@
+{
+  "item": [
+    {
+      "id": "fbcf5145-4e0c-48f3-9aa9-15b376aba792",
+      "name": "Contracts",
+      "description": {
+        "content": "Manage individual contract documents.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b4597181-b272-4e1b-81bf-e662461fa582",
+          "name": "List contracts",
+          "request": {
+            "name": "List contracts",
+            "description": {},
+            "url": {
+              "path": [
+                "contracts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "71554930-73e8-460b-a3f1-b070249c0f95",
+              "name": "List of contracts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contracts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 7639,\n    \"key\": \"string\",\n    \"title\": \"string\",\n    \"version\": \"string\",\n    \"published\": false\n  },\n  {\n    \"id\": 6251,\n    \"key\": \"string\",\n    \"title\": \"string\",\n    \"version\": \"string\",\n    \"published\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d7adbaea-91f7-443b-b9f9-43bd1de49fee",
+          "name": "Get a contract",
+          "request": {
+            "name": "Get a contract",
+            "description": {},
+            "url": {
+              "path": [
+                "contracts",
+                ":contractId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "contractId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "65cabb50-fdf5-438d-aa98-0731fba6c692",
+              "name": "A contract.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contracts",
+                    ":contractId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "contractId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2960,\n  \"key\": \"string\",\n  \"title\": \"string\",\n  \"version\": \"string\",\n  \"published\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://pactsafe.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "191e32a6-8bcc-4bb7-8366-b2bff3e18ff8",
+    "name": "Ironclad Clickwrap Activity Contracts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ironclad Clickwrap API (formerly PactSafe) lets developers programmatically manage clickwrap and click-through agreements, track user acceptance, and generate audit-ready records of consent for terms, privacy policies, and other legal contracts.\n\nContact Support:\n Name: Ironclad Clickwrap Support",
+      "type": "text/plain"
+    }
+  }
+}

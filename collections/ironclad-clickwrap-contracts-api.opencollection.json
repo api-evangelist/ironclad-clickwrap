@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ironclad Clickwrap Activity Contracts API",
+    "version": "1.1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Contracts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List contracts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://pactsafe.io/contracts"
+          },
+          "docs": "List contracts"
+        },
+        {
+          "info": {
+            "name": "Get a contract",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://pactsafe.io/contracts/:contractId",
+            "params": [
+              {
+                "name": "contractId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a contract"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

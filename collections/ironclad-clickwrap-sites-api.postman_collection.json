@@ -1,0 +1,209 @@
+{
+  "item": [
+    {
+      "id": "cda95663-5b28-436f-a17d-b64202cd6f19",
+      "name": "Sites",
+      "description": {
+        "content": "Manage sites that host clickwrap groups.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "777140e0-181e-40fe-8ece-bd3bc257e807",
+          "name": "List sites",
+          "request": {
+            "name": "List sites",
+            "description": {},
+            "url": {
+              "path": [
+                "sites"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "39e80e4f-fc10-40e8-9689-5afaab1c4bea",
+              "name": "List of sites.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sites"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 555,\n    \"sid\": \"string\",\n    \"name\": \"string\",\n    \"domain\": \"string\",\n    \"created\": \"1983-07-27T02:51:28.838Z\"\n  },\n  {\n    \"id\": 6972,\n    \"sid\": \"string\",\n    \"name\": \"string\",\n    \"domain\": \"string\",\n    \"created\": \"1983-09-24T12:02:14.692Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3e8b5ff7-b4dd-4867-ae4d-91517acad5ab",
+          "name": "Get a site",
+          "request": {
+            "name": "Get a site",
+            "description": {},
+            "url": {
+              "path": [
+                "sites",
+                ":siteId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aed0bfcc-5ad7-4fd9-8b42-273319fb5fc3",
+              "name": "A site.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sites",
+                    ":siteId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 3489,\n  \"sid\": \"string\",\n  \"name\": \"string\",\n  \"domain\": \"string\",\n  \"created\": \"1995-05-19T07:54:46.089Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://pactsafe.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c1d75ea0-1a0d-48d7-b174-8ac75ad54186",
+    "name": "Ironclad Clickwrap Activity Sites API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ironclad Clickwrap API (formerly PactSafe) lets developers programmatically manage clickwrap and click-through agreements, track user acceptance, and generate audit-ready records of consent for terms, privacy policies, and other legal contracts.\n\nContact Support:\n Name: Ironclad Clickwrap Support",
+      "type": "text/plain"
+    }
+  }
+}

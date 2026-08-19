@@ -1,0 +1,209 @@
+{
+  "item": [
+    {
+      "id": "975eea3c-0ac9-40a0-9d37-89276d7c556a",
+      "name": "Signers",
+      "description": {
+        "content": "Manage end users who accept agreements.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b194dbc8-3185-4bb9-b560-8fb316d93f6d",
+          "name": "List signers",
+          "request": {
+            "name": "List signers",
+            "description": {},
+            "url": {
+              "path": [
+                "signers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5a8572e5-24eb-49b5-a621-1bac18a2ee3d",
+              "name": "List of signers.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "signers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"external_id\": \"string\",\n    \"email\": \"string\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"external_id\": \"string\",\n    \"email\": \"string\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fca28392-14d9-4e3f-8819-8baaf125ee2f",
+          "name": "Get a signer",
+          "request": {
+            "name": "Get a signer",
+            "description": {},
+            "url": {
+              "path": [
+                "signers",
+                ":signerId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "signerId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "413cfbe6-8bc4-4778-9f08-b995e159fde5",
+              "name": "A signer.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "signers",
+                    ":signerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "signerId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"external_id\": \"string\",\n  \"email\": \"string\",\n  \"first_name\": \"string\",\n  \"last_name\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://pactsafe.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0b0e4780-9e37-42ff-b73c-1ef42c3c394f",
+    "name": "Ironclad Clickwrap Activity Signers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ironclad Clickwrap API (formerly PactSafe) lets developers programmatically manage clickwrap and click-through agreements, track user acceptance, and generate audit-ready records of consent for terms, privacy policies, and other legal contracts.\n\nContact Support:\n Name: Ironclad Clickwrap Support",
+      "type": "text/plain"
+    }
+  }
+}

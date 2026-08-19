@@ -1,0 +1,221 @@
+{
+  "item": [
+    {
+      "id": "bbbc6c85-eeda-48e5-8678-cb1dcf098c70",
+      "name": "Groups",
+      "description": {
+        "content": "Manage clickwrap groups (containers of contracts).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "89af9c7d-c699-432b-ae1a-255cdaf8f859",
+          "name": "List clickwrap groups",
+          "request": {
+            "name": "List clickwrap groups",
+            "description": {},
+            "url": {
+              "path": [
+                "groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sid",
+                  "value": "<integer>",
+                  "description": "Site ID filter."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cde42bef-3aa2-4fba-acec-0547220b4735",
+              "name": "List of groups.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sid",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 8022,\n    \"key\": \"string\",\n    \"name\": \"string\",\n    \"site_id\": 3486,\n    \"contracts\": [\n      4993,\n      5687\n    ],\n    \"created\": \"1947-06-25T06:20:42.188Z\"\n  },\n  {\n    \"id\": 8647,\n    \"key\": \"string\",\n    \"name\": \"string\",\n    \"site_id\": 5275,\n    \"contracts\": [\n      779,\n      1265\n    ],\n    \"created\": \"2018-07-31T18:31:06.072Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d44b450e-711f-4f8f-ae6d-7e9c682db7fe",
+          "name": "Get a clickwrap group",
+          "request": {
+            "name": "Get a clickwrap group",
+            "description": {},
+            "url": {
+              "path": [
+                "groups",
+                ":groupId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6587112f-c87b-4666-bc70-084e168346b8",
+              "name": "A group.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "groups",
+                    ":groupId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 9346,\n  \"key\": \"string\",\n  \"name\": \"string\",\n  \"site_id\": 6293,\n  \"contracts\": [\n    7044,\n    3461\n  ],\n  \"created\": \"2002-09-21T02:19:00.097Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://pactsafe.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "75ea9a55-5640-45f6-92c5-2c76b795c4f1",
+    "name": "Ironclad Clickwrap Activity Groups API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Ironclad Clickwrap API (formerly PactSafe) lets developers programmatically manage clickwrap and click-through agreements, track user acceptance, and generate audit-ready records of consent for terms, privacy policies, and other legal contracts.\n\nContact Support:\n Name: Ironclad Clickwrap Support",
+      "type": "text/plain"
+    }
+  }
+}

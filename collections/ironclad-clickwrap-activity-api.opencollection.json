@@ -1,0 +1,94 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ironclad Clickwrap Activity API",
+    "version": "1.1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Activity",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Record an agreement acceptance event",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://pactsafe.io/send/agreed",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Record an agreement acceptance event"
+        },
+        {
+          "info": {
+            "name": "Record a contract display event",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://pactsafe.io/send/displayed",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Record a contract display event"
+        },
+        {
+          "info": {
+            "name": "Record a page visit event",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://pactsafe.io/send/visited",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Record a page visit event"
+        },
+        {
+          "info": {
+            "name": "Retrieve the latest acceptance state for a signer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://pactsafe.io/retrieve/latest",
+            "params": [
+              {
+                "name": "sig",
+                "value": "",
+                "type": "query",
+                "description": "Signer identifier."
+              },
+              {
+                "name": "gkey",
+                "value": "",
+                "type": "query",
+                "description": "Group key."
+              }
+            ]
+          },
+          "docs": "Retrieve the latest acceptance state for a signer"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

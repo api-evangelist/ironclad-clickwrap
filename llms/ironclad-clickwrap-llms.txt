@@ -1,0 +1,149 @@
+# Ironclad Clickwrap API Documentation Documentation
+
+> The Ironclad Clickwrap API allows you, the developers, to embed contract acceptance, esignature, and more into your own websites and mobile apps.
+
+## Guides
+- [Introduction](https://clickwrap-developer.ironcladapp.com/docs/getting-started.md)
+- [Ironclad Clickwrap Terminology](https://clickwrap-developer.ironcladapp.com/docs/common-data-structures-in-pactsafe.md)
+- [Tutorials](https://clickwrap-developer.ironcladapp.com/docs/tutorials.md)
+- [How to Add a Terms of Use Clickwrap to a Sign Up Page](https://clickwrap-developer.ironcladapp.com/docs/how-to-add-a-terms-of-use-clickwrap-to-a-sign-up-page.md): This step-by-step guide will teach you how to load a Terms of Use Agreement to a sign-up page.
+- [How to Add a Terms of Use to a Checkout Page](https://clickwrap-developer.ironcladapp.com/docs/how-to-add-a-terms-of-use-clickwrap-to-a-checkout-page.md): This step-by-step guide will teach you how to load a Terms of Use Agreement to a checkout page.
+- [How to Add a Clickwrap Group into a Marketo Form](https://clickwrap-developer.ironcladapp.com/docs/how-to-add-a-clickwrap-group-into-a-marketo-form.md): This step-by-step guide will teach you how to integrate Clickwrap tracking into your Marketo Form.
+- [JavaScript Library](https://clickwrap-developer.ironcladapp.com/docs/javascript-library-getting-started.md)
+- [General Considerations](https://clickwrap-developer.ironcladapp.com/docs/javascript-sdk-considerations.md): Before getting started with implementing the Ironclad Clickwrap JavaScript SDK, you may want to consider some of the following topics outlined on this page.
+- [Loading a Clickwrap 101](https://clickwrap-developer.ironcladapp.com/docs/loading-a-clickwrap-101.md)
+- [Manually Sending Acceptance](https://clickwrap-developer.ironcladapp.com/docs/manually-sending-acceptance.md)
+- [Dynamically Render Contract Data](https://clickwrap-developer.ironcladapp.com/docs/how-to-use-dynamic-contracts-with-the-javascript-library.md)
+- [Filtering Templates - Virtual Groups](https://clickwrap-developer.ironcladapp.com/docs/dynamic-groups-and-how-to-use-them.md)
+- [Sending Clickwrap Data Server-side](https://clickwrap-developer.ironcladapp.com/docs/using-psjs-with-back-end-api-calls.md): You may want to use PS.js to render the contracts on the page, populate a contract with app data, and more—but send the API call on the back-end. Here's how to do it!
+- [Checking Acceptance on Login](https://clickwrap-developer.ironcladapp.com/docs/prompting-your-user-on-login.md)
+- [Adding a Signature to an Embedded Contract](https://clickwrap-developer.ironcladapp.com/docs/adding-a-signature-to-embedded-contract.md): How to add a stylized signature or initials block into a document itself
+- [Get Acceptance Record Download URL](https://clickwrap-developer.ironcladapp.com/docs/how-to-get-a-download-url-for-a-pdf-record-after-acceptance.md)
+- [Using Force Scroll](https://clickwrap-developer.ironcladapp.com/docs/force-scroll-in-group-settings-and-how-to-handle-it-in-your-code.md)
+- [Using Embedded Forms](https://clickwrap-developer.ironcladapp.com/docs/using-embedded-forms-in-groups.md)
+- [Add a Snapshot Location to an Agreed Event](https://clickwrap-developer.ironcladapp.com/docs/add-a-snapshot-location-to-an-agreed-event.md)
+- [Debugging with PS.js](https://clickwrap-developer.ironcladapp.com/docs/debugging-the-javascript-in-pactsafe.md)
+- [Troubleshooting ps.js API Calls](https://clickwrap-developer.ironcladapp.com/docs/troubleshooting-verifying-calls-are-being-made.md)
+- [JavaScript Library Reference Docs](https://clickwrap-developer.ironcladapp.com/docs/javascript-library-reference-docs.md)
+- [Setting up the JavaScript Snippet](https://clickwrap-developer.ironcladapp.com/docs/setting-up-the-javascript-snippet.md)
+- [Global_ps Object](https://clickwrap-developer.ironcladapp.com/docs/global_ps-object.md)
+- [Site Object](https://clickwrap-developer.ironcladapp.com/docs/site-object.md)
+- [Triggered Events](https://clickwrap-developer.ironcladapp.com/docs/triggered-events-1.md)
+- [Actions](https://clickwrap-developer.ironcladapp.com/docs/actions.md)
+- [ClickwrapGroup Object](https://clickwrap-developer.ironcladapp.com/docs/clickwrapgroup-object.md)
+- [BrowsewrapGroup Object](https://clickwrap-developer.ironcladapp.com/docs/browsewrapgroup-object.md)
+- [ParameterStore Object](https://clickwrap-developer.ironcladapp.com/docs/parameterstore-object.md)
+- [GroupStore Object](https://clickwrap-developer.ironcladapp.com/docs/groupstore-object.md)
+- [Signer Object](https://clickwrap-developer.ironcladapp.com/docs/signer-object.md)
+- [DataObject](https://clickwrap-developer.ironcladapp.com/docs/dataobject.md)
+- [Activity API](https://clickwrap-developer.ironcladapp.com/docs/activity-api.md)
+- [Authentication (Activity API)](https://clickwrap-developer.ironcladapp.com/docs/authentication-2.md): Learn about how authentication works with the Activity API.
+- [Sending Acceptance via Activity API](https://clickwrap-developer.ironcladapp.com/docs/tracking-acceptance-via-pactsafe-api.md)
+- [Retrieve Last Contracts Signed by Signer](https://clickwrap-developer.ironcladapp.com/docs/retrieve-last-terms-signed-by-signer.md)
+- [Check if Signer Has Accepted Latest Contracts](https://clickwrap-developer.ironcladapp.com/docs/check-if-signer-has-accepted-latest-contracts.md)
+- [Retrieving Clickwrap HTML or Data](https://clickwrap-developer.ironcladapp.com/docs/retrieving-group-html-or-data.md)
+- [Integrating Ironclad Clickwrap without PS.js](https://clickwrap-developer.ironcladapp.com/docs/integrating-clickwrap-without-psjs.md): The guide will cover a server-side setup for accepting clickwraps.
+- [Snapshots for Native Apps](https://clickwrap-developer.ironcladapp.com/docs/snapshots-for-native-apps.md): This guide will cover setting up Snapshots for native apps.
+- [REST API](https://clickwrap-developer.ironcladapp.com/docs/getting-started-rest-api.md)
+- [Authentication (REST API)](https://clickwrap-developer.ironcladapp.com/docs/getting-your-access-token.md): Learn how to authenticate with the REST API by generating and using an access token.
+- [Overview](https://clickwrap-developer.ironcladapp.com/docs/sdk-overview.md)
+- [React SDK](https://clickwrap-developer.ironcladapp.com/docs/react-sdk.md)
+- [Angular SDK](https://clickwrap-developer.ironcladapp.com/docs/angular-sdk.md)
+- [Java SDK](https://clickwrap-developer.ironcladapp.com/docs/java-sdk.md)
+- [iOS SDK](https://clickwrap-developer.ironcladapp.com/docs/ios-sdk.md)
+- [Android SDK](https://clickwrap-developer.ironcladapp.com/docs/android-sdk.md)
+- [Salesforce Integration](https://clickwrap-developer.ironcladapp.com/docs/clickwrap-for-salesforce.md)
+- [Salesforce Integration (via Zapier)](https://clickwrap-developer.ironcladapp.com/docs/salesforce-integration-via-zapier.md)
+- [Salesforce Integration (via Salesforce Apex)](https://clickwrap-developer.ironcladapp.com/docs/salesforce-integration-via-salesforce-apex.md)
+- [Integrating Ironclad Clickwrap with Zapier](https://clickwrap-developer.ironcladapp.com/docs/integrating-pactsafe-with-zapier.md)
+- [Integrating your own email or SMS provider](https://clickwrap-developer.ironcladapp.com/docs/integrating-your-own-email-or-sms-provider.md): Don't want to use our emails or SMS messages? Simply set up a new integration to configure using your own.
+- [Getting Started with Webhooks](https://clickwrap-developer.ironcladapp.com/docs/working-with-ironclad-webhooks.md)
+- [Webhook Events + Payload Examples](https://clickwrap-developer.ironcladapp.com/docs/webhook-events.md)
+- [Retrieving Activity Data in Bulk](https://clickwrap-developer.ironcladapp.com/docs/retrieving-data-in-bulk.md)
+
+## API Reference
+- [Snapshots](https://clickwrap-developer.ironcladapp.com/reference/snapshots.md)
+- [Get Snapshot locations](https://clickwrap-developer.ironcladapp.com/reference/get_locations.md): Returns an array of Snapshot Locations
+- [Create a new Snapshot location](https://clickwrap-developer.ironcladapp.com/reference/post_locations.md): Requires **manage** permissions for Snapshots. A Snapshot Location can be either a `Mobile` or `Web` location depending on the `location_type` body parameter
+- [Get a Snapshot location.](https://clickwrap-developer.ironcladapp.com/reference/get_locations-id.md)
+- [Update a Snapshot location](https://clickwrap-developer.ironcladapp.com/reference/patch_locations-id.md): Requires **manage** permissions for Snapshots. `key` can only be changed if the Snapshot Locaiton is in the `draft` (unpublished) state
+- [Delete a Snapshot location](https://clickwrap-developer.ironcladapp.com/reference/delete_locations-id.md): Requires **manage** permissions for Snapshots. Only allow for draft locations now
+- [Clone a Snapshot location.](https://clickwrap-developer.ironcladapp.com/reference/post_locations-id-clone.md): Requires **manage** permissions for Snapshots.
+- [Publish a Snapshot location](https://clickwrap-developer.ironcladapp.com/reference/post_locations-id-publish.md): Requires **manage** permissions for Snapshots. If your account has met its published location limit, this request will fail with a 400.
+- [Archive a Snapshot location.](https://clickwrap-developer.ironcladapp.com/reference/post_locations-id-archive.md): Requires **manage** permissions for Snapshots. Only allow for published locations now.
+- [Get a location's Snapshots.](https://clickwrap-developer.ironcladapp.com/reference/get_locations-id-snapshots.md): User requires **view** or **manage** permission.
+- [Get a Snapshot.](https://clickwrap-developer.ironcladapp.com/reference/get_locations-id-snapshots-snapshotid.md): User requires **view** or **manage** permission.
+- [Archives a Snapshot.](https://clickwrap-developer.ironcladapp.com/reference/post_locations-id-snapshots-snapshotid-archive.md): Requires **manage** permissions for Snapshots.
+- [Get a Snapshot record for a specific Snapshot.](https://clickwrap-developer.ironcladapp.com/reference/get_locations-id-snapshots-snapshotid-record.md)
+- [Upload a manually captured Snapshot.](https://clickwrap-developer.ironcladapp.com/reference/post_locations-id-snapshots-upload.md): Requires **upload** or **manage** permissions. `captured_time` defaults to now. If `captured_time` is supplied it must be in the past.
+- [Trigger a Snapshot capture.](https://clickwrap-developer.ironcladapp.com/reference/post_locations-id-snapshots-capture.md): Requires **upload** or **manage** permissions.
+- [Get a Snapshot record for a timestamp.](https://clickwrap-developer.ironcladapp.com/reference/get_locations-id-snapshots-record-timestamp.md)
+- [Update Your Account](https://clickwrap-developer.ironcladapp.com/reference/update-your-account-details-1.md)
+- [Retrieve Your Account](https://clickwrap-developer.ironcladapp.com/reference/get-your-account-details-1.md)
+- [List all User Memberships](https://clickwrap-developer.ironcladapp.com/reference/retrieve-user-memberships-for-an-account-1.md)
+- [Overview](https://clickwrap-developer.ironcladapp.com/reference/overview-copy.md)
+- [Add a Site to Your Account](https://clickwrap-developer.ironcladapp.com/reference/add-a-site-to-your-account-1.md)
+- [List all Activity by Signer ID](https://clickwrap-developer.ironcladapp.com/reference/get_sites-site-id-signers-id-signer-id-activity.md): List Clickwrap Actions within a Site by Signer ID
+- [List all sites](https://clickwrap-developer.ironcladapp.com/reference/get_sites.md)
+- [Retrieve a Site](https://clickwrap-developer.ironcladapp.com/reference/retrieve-a-site-1.md): A single Site with all of its properties and details.
+- [Update a Site](https://clickwrap-developer.ironcladapp.com/reference/update-a-site-1.md)
+- [Remove a Site](https://clickwrap-developer.ironcladapp.com/reference/remove-a-site-1.md)
+- [List all Site Members](https://clickwrap-developer.ironcladapp.com/reference/retrieve-user-membership-for-a-site-1.md)
+- [List all Site Memberships](https://clickwrap-developer.ironcladapp.com/reference/list-all-site-memberships-1.md): Site Memberships includes the permissions of the user on the Site.
+- [Update a User's Permissions](https://clickwrap-developer.ironcladapp.com/reference/update-a-user-1.md)
+- [List all Contracts in a Site](https://clickwrap-developer.ironcladapp.com/reference/get_sites-site-id-contract.md): Note: You can also pass a query string parameter `expand=published_version` to return the latest published version details for each Contract within your response.
+- [Create a contract](https://clickwrap-developer.ironcladapp.com/reference/post_sites-site-id-contract.md): To create a Contract, you must specify a site ID, which will be part of the URL.
+- [List Groups in a Site](https://clickwrap-developer.ironcladapp.com/reference/get_sites-site-id-groups.md): List Groups in the specified Site
+- [Create a Group in a Site](https://clickwrap-developer.ironcladapp.com/reference/post_sites-site-id-groups.md): Create a Group in the specified Site
+- [Create an Export](https://clickwrap-developer.ironcladapp.com/reference/post_extract-evidence.md): Creates an export job.
+- [List all Export Jobs](https://clickwrap-developer.ironcladapp.com/reference/get_extract-evidence.md): Get all export jobs.
+- [Get an Export Job by ID](https://clickwrap-developer.ironcladapp.com/reference/get_extract-evidence-id.md): Get an export job by id.
+- [Retrieve Export Job URLs](https://clickwrap-developer.ironcladapp.com/reference/get_extract-evidence-id-urls.md): Retrieve the presigned urls of an export job if it is complete
+- [List all Groups](https://clickwrap-developer.ironcladapp.com/reference/get_groups.md): List all groups available to the current user
+- [Retrieve a Group by ID](https://clickwrap-developer.ironcladapp.com/reference/get_groups-group-id.md): Retrieve a Group by ID
+- [Delete a Group](https://clickwrap-developer.ironcladapp.com/reference/delete_groups-group-id.md): Delete a Group by ID
+- [Update a Group](https://clickwrap-developer.ironcladapp.com/reference/patch_groups-group-id.md): Update a Group by ID
+- [Publish a Group](https://clickwrap-developer.ironcladapp.com/reference/post_groups-group-id-publish.md): Publish a Group by ID
+- [Retrieve a Group by Key](https://clickwrap-developer.ironcladapp.com/reference/get_groups-key-group-key.md): Retrieve a Group by Key
+- [List all Activity.](https://clickwrap-developer.ironcladapp.com/reference/get_activity.md): List Clickwrap Actions within the context of the User (across all Sites and Accounts)
+- [Retrieve an Activity](https://clickwrap-developer.ironcladapp.com/reference/get_activity-activity-id.md): Retrieve a Clickwrap Action by ID.  ###📘 Apply Site Settings Append `?expand=site` as a query parameter to the request to view and apply your site settings.
+- [Retrieve PDF Record by ID](https://clickwrap-developer.ironcladapp.com/reference/get_activity-activity-id-record.md): Retrieve a PDF Record of a Clickwrap Action by Action ID
+- [Retrieve PDF Record by Session ID](https://clickwrap-developer.ironcladapp.com/reference/get_activity-record-session-session-id.md): Retrieve a PDF of a Clickwrap Request or Signer Record by Session ID
+- [List all Signers](https://clickwrap-developer.ironcladapp.com/reference/list-all-signers-1-1.md)
+- [Retrieve a Signer by Signer ID](https://clickwrap-developer.ironcladapp.com/reference/retrieve-a-signer-by-signer-id-1.md)
+- [Delete a Signer by Signer ID](https://clickwrap-developer.ironcladapp.com/reference/delete-a-signer-1.md)
+- [Update a Signer by Signer ID](https://clickwrap-developer.ironcladapp.com/reference/update-a-signer-by-signer-id-1.md)
+- [Delete activity performed by a signer](https://clickwrap-developer.ironcladapp.com/reference/delete-activity-by-signer-id.md)
+- [List all Signers in a Site](https://clickwrap-developer.ironcladapp.com/reference/list-all-signers-2.md)
+- [Upsert a Signer](https://clickwrap-developer.ironcladapp.com/reference/upsert-a-signer-1.md): You can pass **either** a single Signer JSON object or _an array_ of Signer objects with `additional_attributes` that will be attached to the Signer record in your account. Your response will be an Array of JSON objects corresponding to the data passed.
+- [List all Contracts](https://clickwrap-developer.ironcladapp.com/reference/get_contracts.md)
+- [Create and Publish a Contract](https://clickwrap-developer.ironcladapp.com/reference/post_contracts-publish.md): Note: Only supported for HTML contracts at this time.
+- [Retrieve a Contract](https://clickwrap-developer.ironcladapp.com/reference/get_contracts-contract-id.md): Note: You can also pass a query string parameter `expand=latest_version` to return the latest version for each Agreement within your response. Returning the latest version contains an extra property with the Version object containing the latest Version.
+- [Archive a Contract](https://clickwrap-developer.ironcladapp.com/reference/delete_contracts-contract-id.md): This will archive a Contract/Template from Ironclad Clickwrap. All associated versions and activities will also be archived.
+- [Update a Contract](https://clickwrap-developer.ironcladapp.com/reference/patch_contracts-contract-id.md)
+- [Restore the latest deprecated Version of a Contract](https://clickwrap-developer.ironcladapp.com/reference/post_contracts-contract-id-restore.md): Allow the customer to restore the latest deprecated Version to published status.  Note: this operation would fail if there are actions tied to current published version.
+- [List Versions of a Contract](https://clickwrap-developer.ironcladapp.com/reference/get_contracts-contract-id-versions.md)
+- [Create a Version](https://clickwrap-developer.ironcladapp.com/reference/post_contracts-contract-id-versions.md): There are a couple of important things to note when creating a new Version for a Contract: * The latest Version must be published before creating a new Version using the publish endpoint. * There is a separate publish endpoint to use when publishing a Version: `/v1.1/contracts/{contract_id}/versions/{id}/publish`   or `/v1.1/contracts/{contract_id}/versions/@latest/publish`. * To get the latest Version or which Version is published, simply tack on `@latest` or `@published` to your `GET` call to   `/v1.1/contracts/{contract_id}/versions/`.
+- [Retrieve a Version by Number](https://clickwrap-developer.ironcladapp.com/reference/get_contracts-contract-id-versions-version-number.md): Note: This is not by the id of the Version.
+- [Update a Version by Number](https://clickwrap-developer.ironcladapp.com/reference/patch_contracts-contract-id-versions-version-number.md)
+- [Publish a Version](https://clickwrap-developer.ironcladapp.com/reference/post_contracts-contract-id-versions-version-number-publish.md): To simplify the publishing of Versions via API, we've added a very simple route to call instead of including `{version_number}`. Simply `POST` to `/v1.1/contracts/{contract_id}/versions/@latest/publish`.  Note: This is not publishing by the id of the Version. To publish a Version by id, call `/v1.1/versions/{version_id}/publish`.
+- [Retrieve Latest Version](https://clickwrap-developer.ironcladapp.com/reference/get_contracts-contract-id-versions-latest.md): This Version may be in a published or draft state.
+- [Retrieve Latest Published Version](https://clickwrap-developer.ironcladapp.com/reference/get_contracts-contract-id-versions-published.md): This will return the latest published Version of a Contract.  <b>Adding Dynamic Data</b>: Append `/render` to the URL endpoint, switch to a `POST` call, and add your dynamic data within a `render_data` JSON param to utilize tokens and personalize your contracts.
+- [Retrieve a Version](https://clickwrap-developer.ironcladapp.com/reference/get_versions-version-id.md)
+- [Update a Version](https://clickwrap-developer.ironcladapp.com/reference/patch_versions-version-id.md): Before updating a Version, a new Version must be created in Draft status. More information on creating a version can be found [here](https://clickwrap-developer.ironcladapp.com/v0.0.1/reference/create-a-new-version).  <b>Specific Editable Properties</b>: When a version is Published, only certain properties may be edited. Properties that are editable while published include `effective_time` and `effective_until_time`.
+- [Publish a Version](https://clickwrap-developer.ironcladapp.com/reference/post_versions-version-id-publish.md)
+- [Create Field on a Version](https://clickwrap-developer.ironcladapp.com/reference/post_versions-version-id-fields.md): Note: the Version must be in a draft state.
+- [Delete Field on a Version](https://clickwrap-developer.ironcladapp.com/reference/delete_versions-version-id-fields-field-id.md)
+
+## Recipes
+- [JavaScript Library - Clickwrap - Loading a Clickwrap 101](https://clickwrap-developer.ironcladapp.com/recipes/javascript-library-clickwrap-loading-a-clickwrap-101.md)
+- [JavaScript Library - Clickwrap - Loading a Group with Dynamic Contract Data](https://clickwrap-developer.ironcladapp.com/recipes/javascript-library-clickwrap-loading-a-group-with-dynamic-contract-data.md)
+- [JavaScript Library - Clickwrap - Loading a Virtual Group](https://clickwrap-developer.ironcladapp.com/recipes/javascript-library-clickwrap-loading-a-virtual-group.md)
+- [JavaScript Library - Clickwrap - Marketo Forms](https://clickwrap-developer.ironcladapp.com/recipes/javascript-library-clickwrap-marketo-forms.md)
+- [JavaScript Library - Clickwrap - Sending Acceptance Manually](https://clickwrap-developer.ironcladapp.com/recipes/javascript-library-clickwrap-sending-acceptance-manually.md)
+- [JavaScript Library - Clickwrap - Sending Custom Data](https://clickwrap-developer.ironcladapp.com/recipes/javascript-library-clickwrap-sending-custom-data.md)
+
+## Pages
+- [Embedding Legal Centers on your website](https://clickwrap-developer.ironcladapp.com/page/embedding-legal-centers-on-your-website.md)
+- [Integrating Ironclad Clickwrap with your web content management system](https://clickwrap-developer.ironcladapp.com/page/integrating-pactsafe-with-your-web-content-management-system.md)
+- [How to add a Terms of Use Clickwrap to a Sign Up Page](https://clickwrap-developer.ironcladapp.com/page/setting-up-your-clickwrap-sandbox.md)

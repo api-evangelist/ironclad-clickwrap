@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Ironclad Clickwrap Activity Signers API",
+    "version": "1.1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Signers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List signers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://pactsafe.io/signers"
+          },
+          "docs": "List signers"
+        },
+        {
+          "info": {
+            "name": "Get a signer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://pactsafe.io/signers/:signerId",
+            "params": [
+              {
+                "name": "signerId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a signer"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
