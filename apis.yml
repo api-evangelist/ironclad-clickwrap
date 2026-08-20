@@ -59,6 +59,8 @@ apis:
   humanURL: https://clickwrap-developer.ironcladapp.com/
   baseURL: https://pactsafe.io
   tags:
+  - Group
+  tags_raw:
   - Groups
   properties:
   - type: OpenAPI
