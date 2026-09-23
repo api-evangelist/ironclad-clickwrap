@@ -1,5 +1,5 @@
-aid: ironclad-clickwrap
-name: Ironclad Clickwrap Rules
+x-aid: ironclad-clickwrap
+x-name: Ironclad Clickwrap Rules
 description: >-
   Governance and curation rules for the Ironclad Clickwrap company entry
   and its clickwrap REST API documentation within the API Evangelist network.

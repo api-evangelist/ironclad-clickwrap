@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Ironclad Clickwrap Activity API
   description: The Ironclad Clickwrap API (formerly PactSafe) lets developers programmatically manage clickwrap and click-through agreements, track user acceptance, and generate audit-ready records of consent for terms, privacy policies, and other legal contracts.
@@ -102,6 +102,26 @@ components:
           type: integer
         gkey:
           type: string
+    AgreedEvent:
+      type: object
+      required:
+      - sig
+      - gid
+      properties:
+        sig:
+          type: string
+        gid:
+          type: integer
+        gkey:
+          type: string
+        cid:
+          type: array
+          items:
+            type: integer
+        vid:
+          type: array
+          items:
+            type: integer
     VisitedEvent:
       type: object
       required:
@@ -122,26 +142,6 @@ components:
           type: string
           format: date-time
         contracts:
-          type: array
-          items:
-            type: integer
-    AgreedEvent:
-      type: object
-      required:
-      - sig
-      - gid
-      properties:
-        sig:
-          type: string
-        gid:
-          type: integer
-        gkey:
-          type: string
-        cid:
-          type: array
-          items:
-            type: integer
-        vid:
           type: array
           items:
             type: integer
