@@ -90,6 +90,27 @@ paths:
                 $ref: '#/components/schemas/AcceptanceState'
 components:
   schemas:
+    DisplayedEvent:
+      type: object
+      required:
+      - sig
+      - gid
+      properties:
+        sig:
+          type: string
+        gid:
+          type: integer
+        gkey:
+          type: string
+    VisitedEvent:
+      type: object
+      required:
+      - sig
+      properties:
+        sig:
+          type: string
+        url:
+          type: string
     AgreedEvent:
       type: object
       required:
@@ -110,27 +131,6 @@ components:
           type: array
           items:
             type: integer
-    VisitedEvent:
-      type: object
-      required:
-      - sig
-      properties:
-        sig:
-          type: string
-        url:
-          type: string
-    DisplayedEvent:
-      type: object
-      required:
-      - sig
-      - gid
-      properties:
-        sig:
-          type: string
-        gid:
-          type: integer
-        gkey:
-          type: string
     AcceptanceState:
       type: object
       properties:
