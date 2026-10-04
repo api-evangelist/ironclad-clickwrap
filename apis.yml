@@ -31,6 +31,9 @@ accessModel:
   generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ironclad-clickwrap.png
+x-docs-platform: readme
+x-docs-platform-confidence: high
+x-docs-platform-checked: 2026-10-03
 tags:
   - Agreements
   - Compliance
@@ -104,6 +107,9 @@ apis:
   - type: Documentation
     url: https://clickwrap-developer.ironcladapp.com/
 common:
+  - type: CapabilityMap
+    url: capabilities/ironclad-clickwrap-capability-edges.yml
+    name: Ironclad Clickwrap Business Capability Map
   - type: AgenticAccess
     url: agentic-access/ironclad-clickwrap-agentic-access.yml
   - type: TrustCenter
