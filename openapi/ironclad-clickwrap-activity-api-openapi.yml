@@ -90,6 +90,20 @@ paths:
                 $ref: '#/components/schemas/AcceptanceState'
 components:
   schemas:
+    AcceptanceState:
+      type: object
+      properties:
+        signer:
+          type: string
+        accepted:
+          type: boolean
+        acceptance_time:
+          type: string
+          format: date-time
+        contracts:
+          type: array
+          items:
+            type: integer
     DisplayedEvent:
       type: object
       required:
@@ -101,15 +115,6 @@ components:
         gid:
           type: integer
         gkey:
-          type: string
-    VisitedEvent:
-      type: object
-      required:
-      - sig
-      properties:
-        sig:
-          type: string
-        url:
           type: string
     AgreedEvent:
       type: object
@@ -131,20 +136,15 @@ components:
           type: array
           items:
             type: integer
-    AcceptanceState:
+    VisitedEvent:
       type: object
+      required:
+      - sig
       properties:
-        signer:
+        sig:
           type: string
-        accepted:
-          type: boolean
-        acceptance_time:
+        url:
           type: string
-          format: date-time
-        contracts:
-          type: array
-          items:
-            type: integer
   securitySchemes:
     bearerAuth:
       type: http
