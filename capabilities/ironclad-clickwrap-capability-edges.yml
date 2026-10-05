@@ -1,0 +1,34 @@
+slug: ironclad-clickwrap
+provider: Ironclad Clickwrap
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Contracts
+  spec_file: ironclad-clickwrap-contracts-api-openapi.yml
+  capability_id: BC-150.10
+  capability_id_l1: BC-150
+  capability_name: Contract Management
+  confidence: 0.85
+  evidence: GET /contracts listContracts List contracts
+  reason: Direct management/retrieval of clickwrap legal contracts (terms, privacy policies) — contract
+    lifecycle management.
+- tag: Activity
+  spec_file: ironclad-clickwrap-activity-api-openapi.yml
+  capability_id: BC-150.10
+  capability_id_l1: BC-150
+  capability_name: Contract Management
+  confidence: 0.8
+  evidence: POST /send/agreed sendAgreed Record an agreement acceptance event
+  reason: Operations record contract display and acceptance events and retrieve acceptance state for a
+    signer — audit-ready contract acceptance evidence, part of contract lifecycle management. Some ambiguity
+    vs privacy/consent management.
