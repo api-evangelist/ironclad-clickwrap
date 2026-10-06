@@ -40,7 +40,7 @@ tags:
   - Contracts
   - Legal
 created: '2025-02-17'
-modified: '2026-05-19'
+modified: '2026-10-06'
 url: https://raw.githubusercontent.com/api-evangelist/ironclad-clickwrap/refs/heads/main/apis.yml
 specificationVersion: '0.23'
 apis:
@@ -107,6 +107,8 @@ apis:
   - type: Documentation
     url: https://clickwrap-developer.ironcladapp.com/
 common:
+  - url: https://ironcladapp.com/resources/articles
+    type: Blog
   - type: CapabilityMap
     url: capabilities/ironclad-clickwrap-capability-edges.yml
     name: Ironclad Clickwrap Business Capability Map
