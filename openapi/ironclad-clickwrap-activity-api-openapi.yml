@@ -116,6 +116,15 @@ components:
           type: integer
         gkey:
           type: string
+    VisitedEvent:
+      type: object
+      required:
+      - sig
+      properties:
+        sig:
+          type: string
+        url:
+          type: string
     AgreedEvent:
       type: object
       required:
@@ -136,15 +145,6 @@ components:
           type: array
           items:
             type: integer
-    VisitedEvent:
-      type: object
-      required:
-      - sig
-      properties:
-        sig:
-          type: string
-        url:
-          type: string
   securitySchemes:
     bearerAuth:
       type: http
