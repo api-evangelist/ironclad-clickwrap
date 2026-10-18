@@ -27,5 +27,5 @@
     - connectors/applications/ironclad-clickwrap
     vendor_link: https://support.ironcladapp.com/hc/en-us/articles/13668801306903-Ironclad-Clickwrap-Overview
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
