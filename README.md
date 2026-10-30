@@ -1,4 +1,4 @@
-# Ironclad Clickwrap (ironclad-clickwrap)
+# Ironclad Clickwrap
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,57 +66,131 @@
 
 Ironclad Clickwrap is a developer-friendly platform for implementing clickwrap agreements, terms of service, and contract acceptance workflows. The Ironclad Clickwrap API enables developers to programmatically manage clickwrap agreements, record user acceptance, and generate audit trails.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/ironclad-clickwrap/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/ironclad-clickwrap/refs/heads/main/apis.yml)
+**Areas:** Agreements · Compliance · Contracts · Legal
 
-## Scope
+## Ironclad Clickwrap on APIs.io
 
-- **Type:** Index
+Everything profiled for Ironclad Clickwrap is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ironclad-clickwrap/](https://apis.io/providers/ironclad-clickwrap/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (5)
 
-- Agreements
-- Compliance
-- Contracts
-- Legal
+- [Ironclad Clickwrap Activity API](https://apis.io/apis/ironclad-clickwrap/ironclad-clickwrap-activity-api/) — Send acceptance, rejection, and view events.
+- [Ironclad Clickwrap Contracts API](https://apis.io/apis/ironclad-clickwrap/ironclad-clickwrap-contracts-api/) — Manage individual contract documents.
+- [Ironclad Clickwrap Groups API](https://apis.io/apis/ironclad-clickwrap/ironclad-clickwrap-groups-api/) — Manage clickwrap groups (containers of contracts).
+- [Ironclad Clickwrap Signers API](https://apis.io/apis/ironclad-clickwrap/ironclad-clickwrap-signers-api/) — Manage end users who accept agreements.
+- [Ironclad Clickwrap Sites API](https://apis.io/apis/ironclad-clickwrap/ironclad-clickwrap-sites-api/) — Manage sites that host clickwrap groups.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-02-17
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Ironclad Clickwrap API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Ironclad Clickwrap API provides comprehensive guides and documentation for implementing clickwrap agreements, managing contract acceptance, and building compliant legal workflows.
+- [Ironclad Clickwrap Agentic Access](https://apis.io/agentic-access/ironclad-clickwrap/ironclad-clickwrap-agentic-access/)
 
-- **Human URL:** [https://clickwrap-developer.ironcladapp.com/](https://clickwrap-developer.ironcladapp.com/)
-- **Base URL:** `https://pactsafe.io`
+#### Collections (6)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Clickwrap
-- Contracts
-- Legal
+- [Ironclad Clickwrap API](https://apis.io/collections/ironclad-clickwrap/open-ironclad-clickwrap/)
+- [Ironclad Clickwrap Activity API](https://apis.io/collections/ironclad-clickwrap/open-ironclad-clickwrap-activity-api/)
+- [Ironclad Clickwrap Activity Contracts API](https://apis.io/collections/ironclad-clickwrap/open-ironclad-clickwrap-contracts-api/)
+- [Ironclad Clickwrap Activity Groups API](https://apis.io/collections/ironclad-clickwrap/open-ironclad-clickwrap-groups-api/)
+- [Ironclad Clickwrap Activity Signers API](https://apis.io/collections/ironclad-clickwrap/open-ironclad-clickwrap-signers-api/)
+- [Ironclad Clickwrap Activity Sites API](https://apis.io/collections/ironclad-clickwrap/open-ironclad-clickwrap-sites-api/)
 
-#### Properties
+#### Governance rules (1)
 
-- [Documentation](https://clickwrap-developer.ironcladapp.com/)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/ironclad-clickwrap/refs/heads/main/openapi/ironclad-clickwrap-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/ironclad-clickwrap.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/ironclad-clickwrap.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Spectral rulesets for the provider's contracts.
 
-## Common Properties
+- [Ironclad Clickwrap API Rules](https://apis.io/rules/ironclad-clickwrap/ironclad-clickwrap-rules/)
 
-- [GitHub Organization](https://github.com/pactsafe)
-- [LinkedIn](https://www.linkedin.com/company/ironclad-inc-)
-- [Portal](https://clickwrap-developer.ironcladapp.com/)
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Ironclad Clickwrap Authentication](https://apis.io/security/ironclad-clickwrap/ironclad-clickwrap-authentication/)
+- [Ironclad Clickwrap Domain Security](https://apis.io/security/ironclad-clickwrap/ironclad-clickwrap-domain-security/)
+- [Ironclad Clickwrap Trust Center](https://apis.io/security/ironclad-clickwrap/ironclad-clickwrap-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Ironclad Clickwrap Plans Pricing](https://apis.io/plans/ironclad-clickwrap/ironclad-clickwrap-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Ironclad Clickwrap Rate Limits](https://apis.io/rate-limits/ironclad-clickwrap/ironclad-clickwrap-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Ironclad Clickwrap Finops](https://apis.io/finops/ironclad-clickwrap/ironclad-clickwrap-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://ironcladapp.com/)
 - [Support](https://ironcladapp.com/support/)
-- [Integrations](https://ironcladapp.com/product/integrations)
-- [L L Ms Txt](https://clickwrap-developer.ironcladapp.com/llms.txt)
+- [Blog](https://ironcladapp.com/resources/articles)
+- [GitHub](https://github.com/pactsafe)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 27.2** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 44.1 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 15.8 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ironclad-clickwrap/](https://apis.io/providers/ironclad-clickwrap/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Ironclad Clickwrap: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ironclad-clickwrap/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
